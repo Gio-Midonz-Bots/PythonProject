@@ -1,6 +1,7 @@
 from selenium import webdriver as opcoes
 from selenium.webdriver.common.by import By
-
+import pyautogui as timeEspera
+import os
 navegador = opcoes.Chrome()
 navegador.get("https://rpachallengeocr.azurewebsites.net")
 linha =1
@@ -15,5 +16,11 @@ while i < 4:
 
         linhaAtual = linha + 1
     i+=1
+    timeEspera.sleep(2)
+    navegador.find_element(By.XPATH, '//*[@id="tableSandbox_next"]').click()
+    timeEspera.sleep(2)
+else:
+    print('Dados salvos com sucesso!')
+    navegador.quit()
 
 
