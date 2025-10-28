@@ -1,9 +1,12 @@
+from pandas import ExcelWriter
 from selenium import webdriver as opcoes
 from selenium.webdriver.common.by import By
 import pyautogui as timeEspera
-import os
+import pandas as pd
+
 navegador = opcoes.Chrome()
 navegador.get("https://rpachallengeocr.azurewebsites.net")
+listaDataFramer = []
 linha =1
 i =1
 while i < 4:
@@ -13,7 +16,7 @@ while i < 4:
 
     for linhaAtual in linhas:
         print(linhaAtual.text)
-
+        listaDataFramer.append(linhaAtual.text)
         linhaAtual = linha + 1
     i+=1
     timeEspera.sleep(2)
@@ -23,4 +26,10 @@ else:
     print('Dados salvos com sucesso!')
     navegador.quit()
 
+arquivoExcel = pd.ExcelWriter('dadosAbasSites.xlsx', engine='xlsxwriter')
+
+dataFrame = pd.DataFrame(listaDataFramer, columns=['#;ID;Due Data'])
+
+arquivoExcel: ExcelWriter = pd.ExcelWriter('dadosAbasSites.xlsx', engine='xlsxwriter')
+dataFrame.to_excel(arquivoExcel, sheet_name='Dados', index=False)
 
