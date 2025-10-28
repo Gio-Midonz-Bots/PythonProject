@@ -12,4 +12,3 @@ preco = driver.find_elements(By.XPATH,'//*[@id="root"]/div/main/div[2]/div[1]/di
 for produto,preco in zip(produto,preco):
     with open('Produtos.csv', 'a', encoding='utf-8') as arquivo:
         arquivo.write(f'{produto.text},{preco.text},{os.linesep}')
-input('')
