@@ -5,6 +5,28 @@ import pyautogui as funcoesTeclado
 
 navegador = opcoes.Chrome()
 navegador.get("https://www.magazineluiza.com.br")
-time.sleep(1)
+time.sleep(2)
 navegador.find_element(By.ID, "suggestion-input").send_keys("geledeiras")
-time.sleep(1)
+time.sleep(2)
+funcoesTeclado.press("enter")
+time.sleep(2)
+
+listaProdutos = navegador.find_elements(By.CLASS_NAME, "sc-fgSWkL ingbYv")
+
+for item in listaProdutos:
+    nomeProduto = ""
+    precoProduto = ""
+    urlProduto = ""
+
+    if nomeProduto == "":
+        try:
+            nomeProduto = item.find_element(By.CLASS_NAME, "faqMlG").text
+
+        except Exception:
+            pass
+    elif precoProduto == "":
+        try:
+            nomeProduto = item.find_element(By.CLASS_NAME, "sc-fDinKg").text
+        except Exception:
+            pass
+    print(nomeProduto)
