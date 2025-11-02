@@ -18,6 +18,7 @@ while True:
         print(f"Seu valor a ser depositado é: R${depositar}")
         print(f"Seu novo saldo é R${saldo}")
     elif opcao == 3:
+        print(f"Seu saldo é R${saldo}")
         sacar = int(input("Qual é o valor que você desejar Sacar R$"))
         if sacar < 0:
             print("Valor negativo, tente novamente.")
@@ -26,8 +27,6 @@ while True:
         else:
             saldo -= sacar
             print(f"Saque Realizado com sucesse \nSeu novo saldo é R${saldo}")
-
-        print(f"Seu novo saldo é R${saldo}")
     elif opcao == 4:
         print("Obrigado por usar o programa!")
         break
