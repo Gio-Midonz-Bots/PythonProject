@@ -11,7 +11,7 @@ time.sleep(2)
 funcoesTeclado.press("enter")
 time.sleep(2)
 
-listaProdutos = navegador.find_elements(By.CLASS_NAME, "sc-fgSWkL ingbYv")
+listaProdutos = navegador.find_elements(By.CLASS_NAME,"BCSuy" )
 
 for item in listaProdutos:
     nomeProduto = ""
@@ -20,13 +20,13 @@ for item in listaProdutos:
 
     if nomeProduto == "":
         try:
-            nomeProduto = item.find_element(By.CLASS_NAME, "faqMlG").text
+            nomeProduto = item.find_element(By.CLASS_NAME,"enKhKW").text
 
         except Exception:
             pass
     elif precoProduto == "":
         try:
-            nomeProduto = item.find_element(By.CLASS_NAME, "sc-fDinKg").text
+            nomeProduto = item.find_element(By.CLASS_NAME,"sc-kOjCZu" ).text
         except Exception:
             pass
     print(nomeProduto)
