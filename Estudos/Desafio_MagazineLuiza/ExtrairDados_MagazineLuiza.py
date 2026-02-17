@@ -20,7 +20,7 @@ for item in listaProdutos:
 
     if nomeProduto == "":
         try:
-            nomeProduto = item.find_element(By.CLASS_NAME,"enKhKW").text
+            nomeProduto = item.find_element(By.CLASS_NAME,"BCSuy").text
 
         except Exception:
             pass
@@ -29,4 +29,4 @@ for item in listaProdutos:
             nomeProduto = item.find_element(By.CLASS_NAME,"sc-kOjCZu" ).text
         except Exception:
             pass
-    print(nomeProduto)
+            print(nomeProduto)
